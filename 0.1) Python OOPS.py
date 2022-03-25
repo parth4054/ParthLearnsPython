@@ -1,4 +1,3 @@
-
 class Computer:
 
     def __init__(self, cpu, ram):
@@ -14,6 +13,7 @@ com2 = Computer("i7", 16)
 
 com1.config()
 com2.config()
+
 
 
 

@@ -75,14 +75,18 @@ class LinkedList:
             raise Exception("Invalid Index")
 
         if index == 0:
+            temp = self.head
             self.head = self.head.next
+            temp.next = None
             return
 
         counter = 0
         itr = self.head
         while itr:
             if counter == (index-1):
+                temp = itr.next
                 itr.next = itr.next.next
+                temp.next = None
                 break
 
             itr = itr.next
@@ -132,22 +136,19 @@ class LinkedList:
 
 if __name__ == '__main__':
 
-#   ll = LinkedList()
-#   ll.insert_at_beginning(5)
-#   ll.insert_at_beginning(89)
-#   ll.insert_at_end(79)
+    ll = LinkedList()
+    ll.insert_at_beginning(5)
+    ll.insert_at_beginning(89)
+    ll.insert_at_end(79)
+    ll.insert_values(["sandwich", "burger", "pizza", "pasta", "maggie"])
+    ll.print()
+    ll.remove_at(3)
+    ll.print()
+    ll.insert_at(0, "momos")
+    ll.insert_at(2, "Subway")
+    ll.print()
 
-#   ll.insert_values(["sandwich", "burger", "pizza", "pasta", "maggie"])
-#   ll.print()
-
-#   ll.remove_at(3)
-#   ll.print()
-
-#   ll.insert_at(0, "momos")
-#   ll.insert_at(2, "Subway")
-#   ll.print()
-
-#   print("Linked list size = ", str(ll.get_length()))
+    print("Linked list size = ", str(ll.get_length()))
 
     ll = LinkedList()
     ll.insert_values(["banana","mango","grapes","orange"])
@@ -163,5 +164,3 @@ if __name__ == '__main__':
     ll.remove_by_value("apple")
     ll.remove_by_value("grapes")
     ll.print()
-
-# Test line added to check/test git
